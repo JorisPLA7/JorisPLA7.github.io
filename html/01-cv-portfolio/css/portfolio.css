@@ -1,0 +1,75 @@
+
+.portfolio-section{ padding-bottom: 0; }
+
+.portfolio-section .portfolioFilter{ margin-top: 60px; color: #666; }
+
+.portfolio-section .portfolioFilter a{ margin: 10px 10px 0 0; }
+
+.portfolio-section .portfolioFilter a.current{  color: #FFA804; }
+
+.portfolio-section .portfolioContainer{ margin-left: -15px; margin-right: -15px; }
+
+/* .portfolio-section .p-item{ width: 33.333%;
+	padding: 5px 5px 5px 5px ; 
+	margin: 5px 5px 5px 5px; 
+	border-radius: 4px; 
+	-webkit-box-shadow: inset 0px 0px 60px -7px rgba(255,168,4,1);
+	-moz-box-shadow: inset 0px 0px 60px -7px rgba(255,168,4,1);
+	box-shadow: inset 0px 0px 60px -7px rgba(255,168,4,1);
+	
+} */
+
+.portfolio-section .p-item{ width: 31%;
+	padding: 1% 1% 1% 1% ; 
+	margin: .4% .4% .4% .4% ; 
+	border-radius: 10px;
+	border-style: solid;
+	border-width: 5px;
+	border-color: rgb(74, 0, 114); 
+	background: white;
+/* 
+	-webkit-box-shadow: inset 0px 0px 60px -24px rgba(255,168,4,1);
+	-moz-box-shadow: inset 0px 0px 60px -24px rgba(255,168,4,1);
+	box-shadow: inset 0px 0px 60px -24px rgba(255,168,4,1); */
+}
+
+.portfolio-section .p-item a{ display: inline; color: rgb(74, 0, 114) }
+
+
+
+.portfolio-section .p-item { color: rgb(20, 20, 20) ;
+}
+
+
+.portfolio-section .p-item img{ float: left; max-width: 60%; padding: 5px; }
+
+.portfolio-section .p-item .large { float: left; max-width: 100% }
+
+.portfolio-section .p-item .small { float: left; max-width: 30% }
+
+
+.portfolio-section .p-item.p-item-2 .img:last-child{ float: right; width: 50%; padding-left: 7.5px; }
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .portfolio-section {display: none;
+    }
+
+    article {
+        background-color: #F86624;
+        height: 0px;
+        max-width: 0px;
+        padding: 0px;
+      }
+      article p {
+        text-align: justify;
+        text-indent: 0px;
+        color: #ffe0cc;
+          max-height: 0px;
+          text-overflow: ellipsis;
+          margin-bottom: 0px;
+        /* Required for text-overflow to do anything */
+        overflow: hidden;
+      }
+    }
+    /* Desktop */
+    
