@@ -1,9 +1,425 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="refresh" content="0; url='https://read.cv/jpl'" />
-  </head>
-  <body>
-    <p>Hi 👋, You are getting redirected to my portfolio...</p>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joris Placette | Product Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #87CEEB, #E0F7FA);
+            height: 100vh;
+            margin: 0;
+            perspective: 1000px;
+        }
+        
+        .white-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            z-index: 100;
+            animation: fadeOut 2s ease-out forwards;
+        }
+        
+        @keyframes fadeOut {
+            to { opacity: 0; visibility: hidden; }
+        }
+        
+        .card-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-style: preserve-3d;
+            transform: translate(-50%, -50%) rotateX(15deg) rotateY(-15deg);
+            transition: transform 0.5s ease;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .card-container.flipped {
+            transform: translate(-50%, -50%) rotateX(0) rotateY(0);
+            animation: none;
+        }
+        
+        .card {
+            width: 320px;
+            height: 180px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            position: relative;
+            transform-style: preserve-3d;
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+        
+        .card:hover {
+            transform: scale(1.05);
+        }
+        
+        .card.flipped {
+            transform: rotateY(180deg) rotateX(0) rotateY(0);
+            width: 100vw;
+            height: 100vh;
+            border-radius: 0;
+            animation: none;
+        }
+        
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        .card-front {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .watermark {
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            color: rgba(0, 0, 0, 0.3);
+            font-size: 12px;
+            pointer-events: none;
+        }
+        
+        .card-back {
+            transform: rotateY(180deg);
+            overflow-y: auto;
+            background: white;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 0;
+        }
+        
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: starFall linear infinite;
+            z-index: -1;
+        }
+        
+        .floating-square {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            border-radius: 8px;
+            z-index: 1;
+            animation: floatSquare linear infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(-50%, -50%) rotateX(15deg) rotateY(-15deg) translateY(0); }
+            50% { transform: translate(-50%, -50%) rotateX(15deg) rotateY(-15deg) translateY(-20px); }
+        }
+        
+        @keyframes starFall {
+            to { transform: translateY(100vh); }
+        }
+        
+        @keyframes floatSquare {
+            0%, 100% { transform: translate(-50%, -50%) rotate(0deg) translateY(0); }
+            50% { transform: translate(-50%, -50%) rotate(5deg) translateY(-30px); }
+        }
+        
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="white-overlay"></div>
+    
+    <div class="card-container">
+        <div class="card" id="businessCard">
+            <div class="card-front">
+                <h1 class="text-3xl font-medium mb-2">Joris Placette</h1>
+                <p class="text-gray-700">Product Engineer & 3D tech specialist</p>
+                <div class="watermark">click to open</div>
+            </div>
+            <div class="card-back">
+                <div class="content">
+                    <div class="profile-pic mb-6 mx-auto rounded-full w-32 h-32 bg-gray-200 overflow-hidden">
+                        <img src="images/profile-compressed.jpg" alt="Joris Placette profile photo" class="w-full h-full object-cover" />
+                    </div>
+                    
+                    <div class="prose max-w-none">
+                        <h1 class="text-3xl font-bold mb-4">Joris Placette</h1>
+                        <h2 class="text-2xl font-semibold mb-6 text-gray-700">Product Engineer & 3D Technology Specialist</h2>
+                        <p class="mb-8">Passionate product engineer specializing in innovative technologies, with expertise in 3D capture, computer vision, and emerging tech solutions.</p>
+
+                        <div class="border-t border-gray-200 my-6"></div>
+
+                        <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
+                        <ul class="mb-8">
+                            <li><strong>Signal:</strong> jpl.07</li>
+                            <li><strong>LinkedIn:</strong> jpl7</li>
+                            <li><strong>Email:</strong> joris.pla7.w@gmail.com</li>
+                            <li><strong>SimpleX:</strong> jpl</li>
+                        </ul>
+
+                        <div class="border-t border-gray-200 my-6"></div>
+
+                        <h3 class="text-xl font-semibold mb-4">Education</h3>
+                        <div class="mb-8">
+                            <p><strong>2023 – 2024</strong><br>
+                            <strong>D2E: Entrepreneur Studies Degree</strong><br>
+                            Université Grenoble Alpes, France<br>
+                            <em>Diplôme d'Université Diplôme étudiant entrepreneur (D2e)</em></p>
+
+                            <p class="mt-4"><strong>2019 – 2022</strong><br>
+                            <strong>Master's Degree in Engineering</strong><br>
+                            UTC - Université de Technologie de Compiègne, France<br>
+                            <em>Engineering sciences major in computer sciences, with minors in project management, humanities, and art</em></p>
+
+                            <p class="mt-4"><strong>2017 – 2019</strong><br>
+                            <strong>Engineering Preparatory Program</strong><br>
+                            Université Grenoble Alpes, Grenoble, France<br>
+                            <em>Mathematics major with computer science minor. Ranked 19th out of 210 students</em></p>
+
+                            <p class="mt-4"><strong>2017</strong><br>
+                            <strong>High School Diploma (Baccalauréat Scientifique)</strong><br>
+                            Lycée Pablo Neruda, France<br>
+                            <em>Summa cum laude (mention très bien)</em></p>
+                        </div>
+
+                        <div class="border-t border-gray-200 my-6"></div>
+
+                        <h3 class="text-xl font-semibold mb-4">Professional Experience</h3>
+                        <div class="mb-8">
+                            <p><strong>2024 - 2025</strong><br>
+                            <strong>SWE & Volumetric capture Director</strong><br>
+                            Soapbox LLC, Atlanta, USA<br>
+                            Full time employee, O-1B visa - Volumetric content capture and production : In-studio performance to final 3D art & integration with 4DViews' Holosys Volumetric capture studio<br>
+                            Software engineering : Unity & C# , AWS Serverless Application Model, Snap Lens studio, internal tooling.</p>
+
+                            <p class="mt-4"><strong>2023 – 2024</strong><br>
+                            <strong>Freelance Software & Data Engineer</strong><br>
+                            Digigram, Grenoble, France<br>
+                            - Developed software solutions for data engineering and analysis<br>
+                            - Created KPI reporting systems and sales performance prediction models</p>
+
+                            <p class="mt-4"><strong>2023 – 2024</strong><br>
+                            <strong>Co-founder</strong><br>
+                            GeomServices, France<br>
+                            - Co-founded startup enabling real estate hunters and investors to identify high-potential properties using French open data<br>
+                            - Collaborated with Région Ile de France, I-Terra, Pépite-Ozer, and Microsoft For Startups Founders Program</p>
+
+                            <p class="mt-4"><strong>2022 – 2023</strong><br>
+                            <strong>Freelance UX/UI & Graphic Designer</strong><br>
+                            BI Expertise, Montreal, Canada<br>
+                            - Designed AI-based mobile and web applications for inspectai.app and biexhealth.com</p>
+
+                            <p class="mt-4"><strong>2021 – 2023</strong><br>
+                            <strong>Auditor</strong><br>
+                            CTI - Commission des titres d'ingénieur, France & Switzerland</p>
+
+                            <p class="mt-4"><strong>2019 – 2022</strong><br>
+                            <strong>Product Engineer</strong><br>
+                            4Dviews, Grenoble, France<br>
+                            - Enhanced product and user experience for HOLOSYS multi-camera 3D reconstruction capture stage</p>
+                        </div>
+
+                        <div class="border-t border-gray-200 my-6"></div>
+
+                        <h3 class="text-xl font-semibold mb-4">Key Projects</h3>
+                        <div class="mb-8">
+                            <p><strong>2024 – Geom Services</strong><br>
+                            SaaS platform for locating and characterizing French properties entering the market</p>
+
+                            <p class="mt-4"><strong>2022 – Kpop 향(WINDFLOWER) Music Video</strong><br>
+                            3D capture project in collaboration with IOFX Studios, Dima Kpop, and 4Dviews<br>
+                            <a href="https://www.youtube.com/watch?v=qZAsBEvwGb0" class="text-blue-500 hover:underline">Making of</a></p>
+
+                            <p class="mt-4"><strong>2022 – Ethereum Lottery Smart Contract</strong><br>
+                            Blockchain development project</p>
+
+                            <p class="mt-4"><strong>2019 – Freelance 3D Printing Consulting</strong><br>
+                            Independent consulting services for 3D printing solutions</p>
+
+                            <p class="mt-4"><strong>2019 – Game Development</strong><br>
+                            Unity & Godot game development projects</p>
+
+                            <p class="mt-4"><strong>2018 – "Polluters Can't Hide"</strong><br>
+                            Grenoble-Alps University Space Center Hackathon Winner<br>
+                            Prototyped real-time surveillance platform for illegal deforestation using EU Copernicus satellite imagery<br>
+                            <a href="https://youtu.be/UFFg4nO9r44?si=51SBAOOnDEZwj0Va&t=141" class="text-blue-500 hover:underline">Contest video</a></p>
+
+                            <p class="mt-4"><strong>2017 – Open University VR Room</strong><br>
+                            Université Grenoble Alpes<br>
+                            Raised €5,000 to fund open-access VR-equipped room at UGA</p>
+
+                            <p class="mt-4"><strong>2017 – Freedwarfs Platform</strong><br>
+                            Innocup National Innovation Contest, France<br>
+                            Prototyped platform for financing and organizing free software development<br>
+                            <a href="https://www.youtube.com/watch?v=vUxz8z-_v3E" class="text-blue-500 hover:underline">Contest video</a></p>
+                        </div>
+
+                        <div class="border-t border-gray-200 my-6"></div>
+
+                        <h3 class="text-xl font-semibold mb-4">Certifications</h3>
+                        <div class="mb-8">
+                            <p><strong>2022</strong><br>
+                            <strong>English Proficiency - Linguaskill Test</strong><br>
+                            Cambridge University<br>
+                            <em>Maximum score: 180+</em></p>
+                        </div>
+
+                        <div class="border-t border-gray-200 my-6"></div>
+
+                        <h3 class="text-xl font-semibold mb-4">Industry Exhibitions</h3>
+                        <div class="mb-8">
+                            <p><strong>2023</strong> – VivaTech, Paris, France<br>
+                            <strong>2022</strong> – VivaTech, Paris, France<br>
+                            <strong>2022</strong> – Augmented World Exposition America, San Jose, California, USA<br>
+                            <strong>2021</strong> – Augmented World Exposition America, San Jose, California, USA<br>
+                            <strong>2019</strong> – Augmented World Exposition Europe, Munich, Germany</p>
+                        </div>
+
+                        <div class="border-t border-gray-200 my-6"></div>
+
+                        <h3 class="text-xl font-semibold mb-4">Volunteer Experience</h3>
+                        <div class="mb-8">
+                            <p><strong>2020 – 2022</strong><br>
+                            <strong>Lead UI/UX Designer & Staff Member</strong><br>
+                            Imaginarium Festival, Compiègne, France</p>
+                        </div>
+
+                        <div class="border-t border-gray-200 my-6"></div>
+
+                        <h3 class="text-xl font-semibold mb-4">Additional Projects</h3>
+                        <div class="mb-8">
+                            <p><strong>2023 – English-French Translations</strong><br>
+                            Recent project: Portal Stories: Mel (<a href="https://web.archive.org/web/20250323132630mp_/https://store.steampowered.com/app/317400/Portal_Stories_Mel/?l=french" class="text-blue-500 hover:underline">Steam game</a>)</p>
+
+                            <p class="mt-4"><strong>2018 – Cinema Radio Columnist</strong><br>
+                            Radio Grésivaudant<br>
+                            Weekly live radio show reviewing latest film releases</p>
+
+                            <p class="mt-4"><strong>2018 – 3D Printing Blog</strong><br>
+                            Educational blog helping thousands of 3D printing enthusiasts learn new techniques and tricks. <a href="https://apprendre-l-impression-3d.fr/" class="text-blue-500 hover:underline">Blog</a></p>
+                        </div>
+
+                        <div class="border-t border-gray-200 my-6"></div>
+
+                        <p class="italic">Portfolio showcasing expertise in 3D capture technology, product engineering, and innovative tech solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed bottom-4 right-4 z-50">
+        <a href="https://www.linkedin.com/in/jpl7/" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white rounded p-3 shadow-lg transition-colors duration-300">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create stars (background elements)
+            for (let i = 0; i < 50; i++) {
+                createStar();
+            }
+            
+            // Create floating squares (foreground elements)
+            for (let i = 0; i < 8; i++) {
+                createFloatingSquare();
+            }
+            
+            // Card click handler
+            const card = document.getElementById('businessCard');
+            const container = document.querySelector('.card-container');
+            
+            card.addEventListener('click', function() {
+                card.classList.toggle('flipped');
+                container.classList.toggle('flipped');
+                
+                if (card.classList.contains('flipped')) {
+                    document.body.style.overflow = 'auto';
+                } else {
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+            
+            function createStar() {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                
+                // Random size between 1 and 3px
+                const size = Math.random() * 2 + 1;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                
+                // Random position
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                
+                // Random opacity
+                star.style.opacity = Math.random() * 0.5 + 0.1;
+                
+                // Random animation duration
+                const duration = Math.random() * 10 + 5;
+                star.style.animationDuration = `${duration}s`;
+                
+                document.body.appendChild(star);
+                
+                // Remove star after animation completes and create a new one
+                setTimeout(() => {
+                    star.remove();
+                    createStar();
+                }, duration * 1000);
+            }
+            
+            function createFloatingSquare() {
+                const square = document.createElement('div');
+                square.classList.add('floating-square');
+                
+                // Random size between 40 and 100px
+                const size = Math.random() * 60 + 40;
+                square.style.width = `${size}px`;
+                square.style.height = `${size}px`;
+                
+                // Random position around the card
+                const angle = Math.random() * Math.PI * 2;
+                const distance = Math.random() * 200 + 100;
+                const x = 50 + Math.cos(angle) * distance;
+                const y = 50 + Math.sin(angle) * distance;
+                
+                square.style.left = `${x}%`;
+                square.style.top = `${y}%`;
+                
+                // Random opacity
+                square.style.opacity = Math.random() * 0.3 + 0.1;
+                
+                // Random animation duration
+                const duration = Math.random() * 6 + 4;
+                square.style.animationDuration = `${duration}s`;
+                
+                document.body.appendChild(square);
+                
+                // Remove square after animation completes and create a new one
+                setTimeout(() => {
+                    square.remove();
+                    createFloatingSquare();
+                }, duration * 1000);
+            }
+        });
+    </script>
+</body>
 </html>
