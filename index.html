@@ -36,6 +36,17 @@
             height: 100%;
             object-fit: cover;
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @media (max-width: 767px) {
+            .content {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -53,7 +64,21 @@
 
                         <div class="border-t border-gray-200 my-6"></div>
 
-                        <h3 class="text-xl font-semibold mb-4">Contact</h3>
+                        <h3 class="text-xl font-semibold mb-4">Table of Contents</h3>
+                        <ul class="mb-8">
+                            <li><a href="#contact" class="text-blue-500 hover:underline">Contact</a></li>
+                            <li><a href="#education" class="text-blue-500 hover:underline">Education</a></li>
+                            <li><a href="#professional-experience" class="text-blue-500 hover:underline">Professional Experience</a></li>
+                            <li><a href="#notable-projects" class="text-blue-500 hover:underline">Notable Projects</a></li>
+                            <li><a href="#certifications" class="text-blue-500 hover:underline">Certifications</a></li>
+                            <li><a href="#industry-exhibitions" class="text-blue-500 hover:underline">Industry Exhibitions</a></li>
+                            <li><a href="#volunteer-experience" class="text-blue-500 hover:underline">Volunteer Experience</a></li>
+                            <li><a href="#additional-projects" class="text-blue-500 hover:underline">Additional Projects</a></li>
+                        </ul>
+
+                        <div class="border-t border-gray-200 my-6"></div>
+
+                        <h3 id="contact" class="text-xl font-semibold mb-4">Contact</h3>
                         <ul class="mb-8">
                             <li><strong>Signal:</strong> jpl.07</li>
                             <li><strong>LinkedIn:</strong> jpl7</li>
@@ -62,7 +87,7 @@
 
                         <div class="border-t border-gray-200 my-6"></div>
 
-                        <h3 class="text-xl font-semibold mb-4">Education</h3>
+                        <h3 id="education" class="text-xl font-semibold mb-4">Education</h3>
                         <div class="mb-8">
                             <p><strong>2023 – 2024</strong><br>
                             <strong>D2E: Entrepreneur Studies Degree</strong><br>
@@ -87,7 +112,7 @@
 
                         <div class="border-t border-gray-200 my-6"></div>
 
-                        <h3 class="text-xl font-semibold mb-4">Professional Experience</h3>
+                        <h3 id="professional-experience" class="text-xl font-semibold mb-4">Professional Experience</h3>
                         <div class="mb-8">
                             <p><strong>2024 – Present</strong><br>
                             <strong>SWE & Volumetric capture lead engineer </strong><br>
@@ -126,7 +151,7 @@
 
                         <div class="border-t border-gray-200 my-6"></div>
 
-                        <h3 class="text-xl font-semibold mb-4">Notable Projects</h3>
+                        <h3 id="notable-projects" class="text-xl font-semibold mb-4">Notable Projects</h3>
                         <div class="mb-8">
                             <p><strong>2024 – Geom Services</strong><br>
                             SaaS platform for locating and characterizing French properties entering the market</p>
@@ -161,7 +186,7 @@
 
                         <div class="border-t border-gray-200 my-6"></div>
 
-                        <h3 class="text-xl font-semibold mb-4">Certifications</h3>
+                        <h3 id="certifications" class="text-xl font-semibold mb-4">Certifications</h3>
                         <div class="mb-8">
                             <p><strong>2022</strong><br>
                             <strong>English Proficiency - Linguaskill Test</strong><br>
@@ -171,7 +196,7 @@
 
                         <div class="border-t border-gray-200 my-6"></div>
 
-                        <h3 class="text-xl font-semibold mb-4">Industry Exhibitions</h3>
+                        <h3 id="industry-exhibitions" class="text-xl font-semibold mb-4">Industry Exhibitions</h3>
                         <div class="mb-8">
                             <p> Chances are you can find me at USA-hosted AWEs & Vivatech conferences.</p>
                             <p>
@@ -187,7 +212,7 @@
 
                         <div class="border-t border-gray-200 my-6"></div>
 
-                        <h3 class="text-xl font-semibold mb-4">Volunteer Experience</h3>
+                        <h3 id="volunteer-experience" class="text-xl font-semibold mb-4">Volunteer Experience</h3>
                         <div class="mb-8">
                             <p><strong>2020 – 2022</strong><br>
                             <strong>Lead UI/UX Designer & Staff Member</strong><br>
@@ -196,7 +221,7 @@
 
                         <div class="border-t border-gray-200 my-6"></div>
 
-                        <h3 class="text-xl font-semibold mb-4">Additional Projects</h3>
+                        <h3 id="additional-projects" class="text-xl font-semibold mb-4">Additional Projects</h3>
                         <div class="mb-8">
                             <p><strong>English-French Translations</strong><br>
                             Recent project: Portal Stories: Mel (<a href="https://web.archive.org/web/20250323132630mp_/https://store.steampowered.com/app/317400/Portal_Stories_Mel/?l=french" class="text-blue-500 hover:underline">Steam game</a>)</p>
